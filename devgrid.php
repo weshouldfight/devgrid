@@ -1,7 +1,7 @@
 <!--
 Plugin to display a GRID over your Website 
 Requires Foundation XY-Grid
-Version: 1.2 (2019-08-15)
+Version: 1.3 (2019-08-21)
 
 USAGE
 (1) Put the folder devgrid in your theme directory.
@@ -13,11 +13,11 @@ Example: include( get_template_directory() . '/devgrid/devgrid.php');
 <?php
 	
 
-$nr_large_columns 	= 	6; 		// 2, 3, 4, 6 or 12. Default: 6
-$nr_small_columns 	= 	2; 		// Default: 2
+$nr_large_columns 	= 	6; 						// 2, 3, 4, 6 or 12. Default: 6
+$nr_small_columns 	= 	2; 						// Default: 2
 
-$color_of_grid 		= 	'#00FFFF'; 	// Default: #00FFFF
-$opacity_of_grid 	=	'0.08'; 	// Default: 0.08
+$color_of_grid 			= 	'#00FFFF'; 		// Default: #00FFFF
+$opacity_of_grid 		=		'0.08'; 			// Default: 0.08
 
 
 ?>
