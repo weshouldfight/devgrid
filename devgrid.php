@@ -26,7 +26,7 @@ $opacity_of_grid 		=		'0.08'; 			// Default: 0.08
 $large_columns = 12/$nr_large_columns;
 $small_columns = 12/$nr_small_columns;
 ?>
-
+ 
 
 <section id="devgrid" class="section invisible">
 	
