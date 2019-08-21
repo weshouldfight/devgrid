@@ -13,11 +13,11 @@ Example: include( get_template_directory() . '/devgrid/devgrid.php');
 <?php
 	
 
-$nr_large_columns 	= 	6; 						// 2, 3, 4, 6 or 12. Default: 6
-$nr_small_columns 	= 	2; 						// Default: 2
+$nr_large_columns 	= 	6; 		// 2, 3, 4, 6 or 12. Default: 6
+$nr_small_columns 	= 	2; 		// Default: 2
 
-$color_of_grid 			= 	'#00FFFF'; 		// Default: #00FFFF
-$opacity_of_grid 		=		'0.08'; 			// Default: 0.08
+$color_of_grid 		= 	'#00FFFF'; 	// Default: #00FFFF
+$opacity_of_grid 	=	'0.08'; 	// Default: 0.08
 
 
 ?>
