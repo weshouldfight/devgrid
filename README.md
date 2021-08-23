@@ -9,6 +9,9 @@ Example: include( get_template_directory() . '/devgrid/devgrid.php');
 
 ### Changelog
 
+v1.4 – 2021/08/24  
+• Support for grid-padding-x
+
 v1.3 – 2019/08/21  
 • added pointer-events:none;  
   
