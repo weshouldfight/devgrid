@@ -1,5 +1,5 @@
 <!--
-Plugin to display a GRID over your Website 
+Plugin to display a GRID over your Website
 Requires Foundation XY-Grid
 Version: 1.3 (2019-08-21)
 
@@ -11,13 +11,14 @@ Example: include( get_template_directory() . '/devgrid/devgrid.php');
 
 <!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  SETTINGS -->
 <?php
-	
 
-$nr_large_columns 	= 	6; 						// 2, 3, 4, 6 or 12. Default: 6
-$nr_small_columns 	= 	2; 						// Default: 2
+$grid_type		=	'grid-padding-x'; 	// grid-padding-x or grid-margin-x
 
-$color_of_grid 			= 	'#00FFFF'; 		// Default: #00FFFF
-$opacity_of_grid 		=		'0.08'; 			// Default: 0.08
+$nr_large_columns 	= 	12; 			// 2, 3, 4, 6 or 12. Default: 6
+$nr_small_columns 	= 	2; 			// Default: 2
+
+$color_of_grid 		= 	'#00FFFF'; 		// Default: #00FFFF
+$opacity_of_grid 	=	'0.09'; 		// Default: 0.08
 
 
 ?>
@@ -26,13 +27,13 @@ $opacity_of_grid 		=		'0.08'; 			// Default: 0.08
 $large_columns = 12/$nr_large_columns;
 $small_columns = 12/$nr_small_columns;
 ?>
- 
 
-<section id="devgrid" class="section invisible">
-	
-	
+
+<div id="devgrid" class="section invisible">
+
+
 	<div class="grid-container">
-		<div class="grid-x grid-margin-x">
+		<div class="grid-x <?php echo $grid_type ?>">
 		  <div class="cell small-<?php echo $small_columns; ?> medium-<?php echo $large_columns; ?>">
 		  </div>
 		  <div class="cell small-<?php echo $small_columns; ?> medium-<?php echo $large_columns; ?>">
@@ -59,9 +60,9 @@ $small_columns = 12/$nr_small_columns;
 		  </div>
 		</div>
 	</div>
-	
 
-<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  SCREEN SIZE -->	
+
+<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  SCREEN SIZE -->
 
 
 	<div id="show-screensize">
@@ -70,16 +71,16 @@ $small_columns = 12/$nr_small_columns;
 		<p class="hide-for-medium-only hide-for-small-only">large screen</p>
 		<p class="viewportsize"><span class="width"></span> x <span class="height"></span></p>
 	</div>
-	
-	
-</section>
 
 
-<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  CSS STYLING -->	
+</div>
+
+
+<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  CSS STYLING -->
 
 
 <style>
-	
+
 #devgrid {
 	position: fixed;
 	top: 0;
@@ -88,12 +89,14 @@ $small_columns = 12/$nr_small_columns;
 	padding-bottom: 0;
 	z-index: 8999;
 	pointer-events: none;
+	width: 100%;
 }
 
 #devgrid .cell {
 	background-color: <?php echo $color_of_grid; ?>;
 	opacity: <?php echo $opacity_of_grid; ?>;
 	height: 100vh;
+	background-clip: content-box;
 }
 
 #devgrid.invisible {
@@ -124,29 +127,29 @@ $small_columns = 12/$nr_small_columns;
 
 
 
-<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  jQuery Hotkeys Plugin -->	
+<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  jQuery Hotkeys Plugin -->
 
 
 <script src="<?php bloginfo('template_url'); ?>/devgrid/jquery.hotkeys.js"></script>
 
 
-<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  jQuery Toggle Grid -->	
+<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  jQuery Toggle Grid -->
 
 
 <script type="text/javascript">
-	
+
 $( document ).ready(function() {
-	
-	$(document).bind('keydown', 'ctrl+g', function(e){ 
+
+	$(document).bind('keydown', 'ctrl+g', function(e){
 		e.preventDefault();
 		$('#devgrid').toggleClass('invisible');
 	});
-	
+
 	var viewportWidth = $(window).width();
 	var viewportHeight = $(window).height();
 	$(".viewportsize .width").html(viewportWidth);
 	$(".viewportsize .height").html(viewportHeight);
-	
+
 	$(window).resize(function() {
 		var viewportWidth = $(window).width();
 		var viewportHeight = $(window).height();
